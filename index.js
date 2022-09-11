@@ -18,10 +18,7 @@ async function start(client) {
                     var ubicacionBus = "";
 
                     async function start() {
-                        const browser = await puppeteer.launch({
-                            headless: true,
-                            args: ['--no-sandbox']
-                        });
+                        const browser = await puppeteer.launch()
                         const page = await browser.newPage()
                         await page.goto(url1)
                         
@@ -74,7 +71,7 @@ create({
   // For Mac:
   //executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
   // For Windows:
-  args: ['--no-sandbox'],
+  executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
   headless:true,
   qrTimeout: 0,
   authTimeout: 0,
