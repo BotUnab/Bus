@@ -71,7 +71,7 @@ create({
   // For Mac:
   //executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
   // For Windows:
-  executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  executablePath: "/app/.apt/usr/bin/google-chrome",
   headless:true,
   qrTimeout: 0,
   authTimeout: 0,
