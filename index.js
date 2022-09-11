@@ -4,6 +4,7 @@ import { staticMapUrl } from 'static-google-map';
 const require = createRequire(import.meta.url);
 //////////////////////////////////////////////////
 const puppeteer = require("puppeteer")
+import chromium from 'chrome-aws-lambda';
 
 import { create, Client } from '@open-wa/wa-automate';
 
@@ -18,7 +19,13 @@ async function start(client) {
                     var ubicacionBus = "";
 
                     async function start() {
-                        const browser = await puppeteer.launch()
+                        const browser = await chromium.puppeteer.launch({
+                            args: [...chromium.args, "--hide-scrollbars", "--disable-web-security"],
+                            defaultViewport: chromium.defaultViewport,
+                            executablePath: await chromium.executablePath,
+                            headless: true,
+                            ignoreHTTPSErrors: true,
+                          })
                         const page = await browser.newPage()
                         await page.goto(url1)
                         
@@ -71,7 +78,7 @@ create({
   // For Mac:
   //executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
   // For Windows:
-  executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  executablePath: await chromium.executablePath,
   headless:true,
   qrTimeout: 0,
   authTimeout: 0,
