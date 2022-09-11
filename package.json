@@ -1,0 +1,27 @@
+{
+  "name": "botbus",
+  "version": "1.0.0",
+  "description": "Bot creado para el bus",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Baguettou/Bus.git"
+  },
+  "author": "PPlencia",
+  "license": "MIT",
+  "dependencies": {
+    "@open-wa/wa-automate": "^4.44.3",
+    "axios": "^0.27.2",
+    "cheerio": "^1.0.0-rc.12",
+    "puppeteer": "^17.1.3",
+    "static-google-map": "^0.0.4"
+  },
+  "bugs": {
+    "url": "https://github.com/Baguettou/Bus/issues"
+  },
+  "homepage": "https://github.com/Baguettou/Bus#readme",
+  "type": "module"
+}
